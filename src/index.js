@@ -36,7 +36,7 @@ document.querySelector('DOMContentLoaded', retriveData());
 
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
-  let input =  document.querySelector('#item-input');
+  const input =  document.querySelector('#item-input');
   if (validation(input)) { updateTasks(input.value) }
   clearField(input);
   console.log(tasks)
