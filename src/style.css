@@ -12,7 +12,7 @@ body {
 #list-container {
   background-color: white;
   width: fit-content;
-  margin: 15% auto;
+  margin: 5% auto;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 8px 8px 2px gainsboro;
   border-radius: 10px;
@@ -21,6 +21,10 @@ body {
 #title {
   font-size: 1em;
   font-weight: lighter;
+}
+
+#submit i {
+  font-size: 10px;
 }
 
 .item {
@@ -32,16 +36,12 @@ body {
   height: 40px;
 }
 
-li:focus-within {
-  background-color: rgb(255, 254, 202);
-}
-
 textarea {
   border: 0;
   width: 40vw;
   height: 20px;
   resize: none;
-  padding: 0 5%;
+  margin: 0 5%;
   vertical-align: middle;
   font: inherit;
   font-size: 0.75em;
@@ -73,7 +73,7 @@ button {
 }
 
 .clear-all {
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(241, 240, 240);
   text-align: center;
   height: 40px;
   width: 100%;
