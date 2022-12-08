@@ -3,7 +3,7 @@ import './style.css';
 
 const listElement = document.querySelector('#list-items');
 const tasks = [
-  { completed: false, description: 'Walk the dog', index: 3 },
+  { completed: false, description: 'Walk the dogs', index: 3 },
   { completed: false, description: 'Study', index: 0 },
   { completed: false, description: 'Complete a coding challenge', index: 1 },
   { completed: false, description: 'Clean my workspace', index: 2 },
