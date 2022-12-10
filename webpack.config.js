@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -23,4 +24,5 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  mode: 'development',
 };

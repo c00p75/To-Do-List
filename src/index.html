@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<title>To do list</title>
 </head>
 <body>
-    <h1>Hello webpack!</h1>
+	<main>
+		<div id="list-container">
+			<div class="item"><h1 id="title">Today's To-Do list</h1> <button class="rotate"><i class="bi bi-arrow-repeat"></i></button></div>
+			<div class="add-item">
+				<form action="" id="add" class="item">
+					<input type="text" id="item-input" placeholder="Add to your list...">
+					<button type="submit" id="submit"> <i class="bi bi-arrow-return-left"></i> </button>
+				</form>
+			</div>
+			<ul id="list-items"></ul>
+			<button class="clear-all">Clear all completed</button>
+		</div>
+	</main>
 </body>
 </html>
