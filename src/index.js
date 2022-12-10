@@ -1,43 +1,58 @@
 import _ from 'lodash'; // eslint-disable-line
 import './style.css';
+import {listElement} from './Modules/Add html.js';
+import {retrieveData, clearCompletedTasks, newToDo} from './Modules/Storage.js';
+import validation from './Modules/Validation.js';
+import updateTasks from './Modules/Update task.js';
+import deleteTask from './Modules/Delete task.js';
+import checkBox from './Modules/Check box.js';
+import editTasksField from './Modules/Edit task.js';
+import taskField from './Modules/Show delete button.js';
 
-const listElement = document.querySelector('#list-items');
-const tasks = [
-  { completed: false, description: 'Walk the dogs', index: 3 },
-  { completed: false, description: 'Study', index: 0 },
-  { completed: false, description: 'Complete a coding challenge', index: 1 },
-  { completed: false, description: 'Clean my workspace', index: 2 },
-];
+// DOM load evenet listener
+document.querySelector('DOMContentLoaded', retrieveData());
 
-const addTasks = (description) => {
-  const newItem = document.createElement('li');
-  newItem.classList.add('item');
-  newItem.innerHTML = `<input type="checkbox"> <textarea onfocus="parentElement.style.backgroundColor='rgb(255, 254, 202)';" onfocusout="parentElement.style.backgroundColor='white';">${description}</textarea> <span class = "grip"><i class="bi bi-three-dots-vertical"></i></span>`;
-  listElement.appendChild(newItem);
-};
-
-const retriveData = () => {
-  tasks.sort((a, b) => a.index - b.index);
-  tasks.forEach((item) => addTasks(item.description));
-};
-
-const updateTasks = (description, completed = false, index = tasks.length) => {
-  tasks.push({ description, completed, index });
-  addTasks(description);
-};
-
-const validation = (description) => {
-  if (description.value === '') { return false; }
-  return true;
-};
-
-const clearField = (element) => { element.value = ''; };
-
-document.querySelector('DOMContentLoaded', retriveData());
-
+// Tasks submit event listener
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
   const input = document.querySelector('#item-input');
   if (validation(input)) { updateTasks(input.value); }
-  clearField(input);
+  input.value = '';
 });
+
+// Delete button and Checkbox event listeners
+listElement.addEventListener('click', (event) => {
+  if (event.target.classList.contains('delete')) { deleteTask(event.target) }
+  if (event.target.nodeName === 'INPUT') { checkBox(event.target); }
+})
+
+// Enter button in text-area event listener
+listElement.addEventListener('keydown', (event) => {
+  if (event.target.nodeName === 'TEXTAREA') {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      editTasksField(event.target)
+    }
+  }
+})
+
+// Text-area Focus out event listener
+listElement.addEventListener('focusout', (event) => {
+  if (event.target.nodeName === 'TEXTAREA') {
+    editTasksField(event.target);
+    taskField(event.target);
+  }
+})
+
+// Text-area Focus in event listener
+listElement.addEventListener('focusin', (event) => {
+  if (event.target.nodeName === 'TEXTAREA') {
+    taskField(event.target);
+  }
+})
+
+// Clear all completed tasks button event listener
+document.querySelector('.clear-all').addEventListener('click', () => clearCompletedTasks())
+
+// Create new To-Do list button event listener
+document.querySelector('.rotate').addEventListener('click', () => newToDo())

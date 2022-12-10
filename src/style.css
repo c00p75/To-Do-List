@@ -11,7 +11,7 @@ body {
 
 #list-container {
   background-color: white;
-  width: fit-content;
+  width: 50vw;
   margin: 5% auto;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 8px 8px 2px gainsboro;
@@ -85,6 +85,27 @@ button {
   text-decoration: underline;
 }
 
+.focused {
+  background-color: rgb(255, 254, 202);
+}
+
 .grip {
   cursor: move;
+}
+
+.delete {
+  cursor: pointer;
+  font-size: small;
+}
+
+.delete:hover {
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.checkedTask {
+  text-decoration: line-through;
 }
