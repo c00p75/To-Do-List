@@ -11,8 +11,8 @@ body {
 
 #list-container {
   background-color: white;
-  width: 50vw;
-  margin: 5% auto;
+  width: 90vw;
+  margin: 1.4em auto;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 8px 8px 2px gainsboro;
   border-radius: 10px;
@@ -21,10 +21,39 @@ body {
 #title {
   font-size: 1em;
   font-weight: lighter;
+  width: 90%;
 }
 
 #submit i {
   font-size: 10px;
+}
+
+#list-items {
+  max-height: 75vh;
+  overflow-y: scroll;
+}
+
+#settings-btn {
+  padding-top: 2.5px;
+  transition: transform 1s;
+}
+
+.openSettings {
+  transform: rotate(45deg);
+  transition: transform 1s;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  background-color: #dcdcdc;
+  padding: 2%;
+  width: 100% !important;
+}
+
+#settings-container {
+  margin: 0 auto;
+  width: 50%;
 }
 
 .item {
@@ -38,7 +67,7 @@ body {
 
 textarea {
   border: 0;
-  width: 40vw;
+  width: 100%;
   height: 20px;
   resize: none;
   margin: 0 5%;
@@ -73,6 +102,7 @@ button {
 }
 
 .clear-all {
+  position: relative;
   background-color: rgb(241, 240, 240);
   text-align: center;
   height: 40px;
@@ -106,6 +136,56 @@ button {
   display: none;
 }
 
+.hide2 {
+  display: none !important;
+}
+
 .checkedTask {
   text-decoration: line-through;
+}
+
+.themes {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+.themes div {
+  padding-left: 15%;
+}
+
+.themes label {
+  padding-left: 5%;
+}
+
+.config-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.classic-theme {
+  background-color: rgb(255, 254, 202);
+}
+
+.dark-theme {
+  background-color: black;
+}
+
+.dark-theme * {
+  color: white !important;
+}
+
+@media only screen and (min-width: 768px) {
+  #list-container {
+    margin: 1em auto;
+    width: 50vw;
+  }
+
+  #list-items {
+    max-height: 70vh;
+  }
 }

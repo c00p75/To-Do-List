@@ -8,6 +8,7 @@ import deleteTask from './Modules/Delete task.js';
 import checkBox from './Modules/Check box.js';
 import editTasksField from './Modules/Edit task.js';
 import taskField from './Modules/Show delete button.js';
+import {settingsButton, settings} from './Modules/Configurations.js';
 
 // DOM load evenet listener
 document.querySelector('DOMContentLoaded', retrieveData());
@@ -22,7 +23,8 @@ document.querySelector('form').addEventListener('submit', (event) => {
 
 // Delete button and Checkbox event listeners
 listElement.addEventListener('click', (event) => {
-  if (event.target.classList.contains('delete')) { deleteTask(event.target) }
+  console.log(event.target.classList.contains('delete'));
+  if (event.target.classList.contains('delete')) { console.log('choka'); deleteTask(event.target) }
   if (event.target.nodeName === 'INPUT') { checkBox(event.target); }
 })
 
@@ -56,3 +58,13 @@ document.querySelector('.clear-all').addEventListener('click', () => clearComple
 
 // Create new To-Do list button event listener
 document.querySelector('.rotate').addEventListener('click', () => newToDo())
+
+// Settings button event listener
+settingsButton.addEventListener('click', (event) => {
+  settingsButton.classList.toggle('openSettings');
+  settings.classList.toggle('hide2');
+})
+
+settings.addEventListener('click', (event) => {
+  console.log(event.target)
+})
