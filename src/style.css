@@ -91,6 +91,7 @@ button {
 
 .grip {
   cursor: move;
+  user-select: none;
 }
 
 .delete {
@@ -108,4 +109,8 @@ button {
 
 .checkedTask {
   text-decoration: line-through;
+}
+
+.drag-item {
+  background-color: gray !important;
 }

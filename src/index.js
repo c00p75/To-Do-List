@@ -40,7 +40,9 @@ listElement.addEventListener('keydown', (event) => {
 listElement.addEventListener('focusout', (event) => {
   if (event.target.nodeName === 'TEXTAREA') {
     editTasksField(event.target);
-    taskField(event.target);
+    setTimeout(() => {
+      taskField(event.target);
+    }, 150);
   }
 })
 
@@ -55,4 +57,4 @@ listElement.addEventListener('focusin', (event) => {
 document.querySelector('.clear-all').addEventListener('click', () => clearCompletedTasks())
 
 // Create new To-Do list button event listener
-document.querySelector('.rotate').addEventListener('click', () => newToDo())
+document.querySelector('.rotate').addEventListener('click', () => newToDo());

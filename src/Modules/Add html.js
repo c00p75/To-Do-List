@@ -7,7 +7,8 @@ export default (description, completed, index) => {
   if (completed === true) { check = 'checked' }
   const newItem = document.createElement('li');
   newItem.classList.add('item');
+  newItem.setAttribute('draggable', 'true');
   newItem.id = index;
-  newItem.innerHTML = `<input type="checkbox" ${check}> <textarea style = "display:block">${description}</textarea> <span class = "grip"><i class="bi bi-three-dots-vertical"></i></span> <i class="bi bi-trash3 delete hide" onmouseover="style.display='block'; this.previousElementSibling.style.display='none'"></i>`;
+  newItem.innerHTML = `<input type="checkbox" ${check}> <textarea style="display:block;">${description}</textarea> <i class="bi bi-three-dots-vertical grip"></i> <i class="bi bi-trash3 delete hide"></i>`;
   listElement.appendChild(newItem);
 };
