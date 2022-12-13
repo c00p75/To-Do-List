@@ -7,7 +7,7 @@ import updateTasks from './Modules/Update task.js';
 import deleteTask from './Modules/Delete task.js';
 import checkBox from './Modules/Check box.js';
 import editTasksField from './Modules/Edit task.js';
-import taskField from './Modules/Show delete button.js';
+import {taskField, displayDelete} from './Modules/Show delete button.js';
 
 // DOM load evenet listener
 document.querySelector('DOMContentLoaded', retrieveData());
@@ -40,8 +40,9 @@ listElement.addEventListener('keydown', (event) => {
 listElement.addEventListener('focusout', (event) => {
   if (event.target.nodeName === 'TEXTAREA') {
     editTasksField(event.target);
+    taskField(event.target);
     setTimeout(() => {
-      taskField(event.target);
+      displayDelete(event.target);
     }, 150); 
   }
 })
@@ -50,6 +51,7 @@ listElement.addEventListener('focusout', (event) => {
 listElement.addEventListener('focusin', (event) => {
   if (event.target.nodeName === 'TEXTAREA') {
     taskField(event.target);
+    displayDelete(event.target);
   }
 })
 
