@@ -40,7 +40,9 @@ listElement.addEventListener('keydown', (event) => {
 listElement.addEventListener('focusout', (event) => {
   if (event.target.nodeName === 'TEXTAREA') {
     editTasksField(event.target);
-    taskField(event.target);
+    setTimeout(() => {
+      taskField(event.target);
+    }, 150); 
   }
 })
 
