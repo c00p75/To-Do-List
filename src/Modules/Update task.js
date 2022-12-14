@@ -6,4 +6,5 @@ export default (description, completed = false, index = tasks.length) => {
   tasks.push({ description, completed, index });
   storeData()
   addTasks(description, completed, index);
+  return tasks
 };

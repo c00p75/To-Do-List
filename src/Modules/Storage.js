@@ -9,11 +9,10 @@ export const  retrieveData =  () => {
   const stored = localStorage.getItem('To-do tasks');
   if (stored !== null) { tasks = JSON.parse(stored); }
   // tasks.sort((a, b) => a.index - b.index);
-  listElement.innerHTML = '';
+  document.querySelector('#list-items').innerHTML = '';
   tasks.forEach(item => addTasks(item.description, item.completed, item.index));
-  listElement.childNodes.forEach(item => taskStatus(item.childNodes[0]));
+  document.querySelector('#list-items').childNodes.forEach(item => taskStatus(item.childNodes[0]));
 };
-
 
 // Store data in local storage
 export const storeData = () => {
