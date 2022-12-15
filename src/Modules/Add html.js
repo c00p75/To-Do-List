@@ -2,7 +2,7 @@
 export const listElement = document.querySelector('#list-items');
 
 // Dynamically generate task html
-export default (description, completed, index) => {
+export const addTasks = (description, completed, index) => {
   let check = '';
   if (completed === true) { check = 'checked'; }
   const newItem = document.createElement('li');

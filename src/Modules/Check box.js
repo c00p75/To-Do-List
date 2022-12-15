@@ -1,5 +1,5 @@
 import { storeData, tasks } from './Storage.js';
-import { default as taskStatus } from './Task status.js';
+import taskStatus from './Task status.js';
 
 // Store checkbox value
 export default (element) => {

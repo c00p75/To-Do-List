@@ -1,5 +1,5 @@
-import { default as addTasks, listElement } from './Add html.js';
-import { default as taskStatus } from './Task status.js';
+import { addTasks, listElement } from './Add html.js';
+import taskStatus from './Task status.js';
 
 // Declare tasks array
 export let tasks = [];
