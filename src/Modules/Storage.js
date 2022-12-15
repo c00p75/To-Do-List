@@ -2,7 +2,7 @@ import { addTasks, listElement } from './Add html.js';
 import taskStatus from './Task status.js';
 
 // Declare tasks array
-export let tasks = [];
+export let tasks = []; // eslint-disable-line
 
 // Retrieve data from local storage
 export const retrieveData = () => {
