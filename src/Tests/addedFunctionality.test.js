@@ -1,5 +1,4 @@
 /* @jest-environment jsdom*/
-/* eslint-disable */
 
 import {tasks, clearCompletedTasks} from '../Modules/Storage.js';
 import updateTasks from '../Modules/Update task.js';
