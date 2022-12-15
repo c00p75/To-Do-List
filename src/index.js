@@ -22,7 +22,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
 
 // Delete button and Checkbox event listeners
 listElement.addEventListener('click', (event) => {
-  if (event.target.classList.contains('delete')) { deleteTask(event.target) }
+  if (event.target.classList.contains('delete')) { deleteTask(event.target.parentElement) }
   if (event.target.nodeName === 'INPUT') { checkBox(event.target); }
 })
 
