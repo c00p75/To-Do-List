@@ -6,7 +6,6 @@ import updateTasks from '../Modules/Update task.js';
 import editTasksField from '../Modules/Edit task.js';
 import checkBox from '../Modules/Check box.js';
 
-
 jest.mock(tasks);
 
 document.body.innerHTML =
@@ -61,9 +60,17 @@ describe("Update a tasks' completed status.", () => {
   // Add two other items to list
   updateTasks('Buy groceries', true);     //Item completed status set to true
   updateTasks('Change kitty litter');     //Item completed status has default value of false
-  
+
   test('Clear all completed tasks', () => {
     clearCompletedTasks();
-    expect(tasks.length).toBe(1)
+    expect(tasks.length).toBe(2)
   })
+
+  updateTasks('Go for Groceries');     //Item completed status has default value of false
+
+   test('Clear all completed tasks', () => {
+    clearCompletedTasks();
+    expect(tasks.length).toBe(2)
+  })
+
 })
