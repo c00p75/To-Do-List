@@ -4,6 +4,6 @@ import {storeData, tasks} from './Storage.js';
 export default (element) => {
   const parent = element.parentElement;
   tasks[parent.id].description = element.value;
-  element.blur()
+  element.blur();
   storeData();
 }
