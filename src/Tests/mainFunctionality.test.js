@@ -1,5 +1,4 @@
 /* @jest-environment jsdom*/
-/* eslint-disable */
 
 import updateTasks from '../Modules/Update task.js';
 import {tasks} from '../Modules/Storage.js';
