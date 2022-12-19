@@ -1,3 +1,7 @@
+:root {
+  --font: 1.2rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,40 +11,37 @@
 
 body {
   background-color: whitesmoke;
+  background-image: url('./Images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  padding: 2% 0;
 }
 
 #list-container {
   background-color: white;
-  width: 90vw;
-  margin: 1.4em auto;
+  width: 95vw;
+  margin: auto;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 8px 8px 2px gainsboro;
-  border-radius: 10px;
+  box-shadow: 0 8px 8px 2px rgb(0, 0, 0);
+  opacity: 0.9;
+  font-size: var(--font);
 }
 
 #title {
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: lighter;
   width: 90%;
 }
 
 #submit i {
-  font-size: 10px;
+  font-size: 1rem;
 }
 
 #list-items {
-  max-height: 75vh;
-  overflow-y: scroll;
-}
-
-#settings-btn {
-  padding-top: 2.5px;
-  transition: transform 1s;
-}
-
-.openSettings {
-  transform: rotate(45deg);
-  transition: transform 1s;
+  max-height: 77vh;
+  overflow-y: auto;
 }
 
 #settings {
@@ -62,18 +63,17 @@ body {
   align-items: center;
   border-bottom: 1px gainsboro solid;
   padding: 2% 20px;
-  height: 40px;
+  height: 3rem;
 }
 
 textarea {
   border: 0;
   width: 100%;
-  height: 20px;
+  height: 2rem;
   resize: none;
   margin: 0 5%;
   vertical-align: middle;
   font: inherit;
-  font-size: 0.75em;
   background: none;
 }
 
@@ -83,6 +83,7 @@ textarea:focus {
 
 .rotate {
   transform: rotate(90deg);
+  font-size: 1.2rem;
 }
 
 button {
@@ -95,6 +96,7 @@ button {
   font-style: italic;
   border: 0;
   width: 100%;
+  font-size: var(--font);
 }
 
 #item-input:focus {
@@ -109,6 +111,7 @@ button {
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  font-size: var(--font);
 }
 
 .clear-all:hover {
@@ -125,7 +128,6 @@ button {
 
 .delete {
   cursor: pointer;
-  font-size: small;
 }
 
 .delete:hover {
@@ -144,45 +146,15 @@ button {
   text-decoration: line-through;
 }
 
-.themes {
-  padding-top: 10%;
-  display: flex;
-  flex-direction: column;
-}
-
-h2 {
-  font-size: 1em;
-}
-
-.themes div {
-  padding-left: 15%;
-}
-
-.themes label {
-  padding-left: 5%;
-}
-
-.config-1 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.classic-theme {
-  background-color: rgb(255, 254, 202);
-}
-
-.dark-theme {
-  background-color: black;
-}
-
-.dark-theme * {
-  color: white !important;
-}
-
 @media only screen and (min-width: 768px) {
+body {
+  background-image: url('./Images/pexels-lukas-317356.jpg');
+}
+
   #list-container {
-    margin: 1em auto;
     width: 50vw;
+    border-radius: 10px;
+    margin: 1em auto;
   }
 
   #list-items {
