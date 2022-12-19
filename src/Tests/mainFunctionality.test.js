@@ -22,7 +22,7 @@ document.body.innerHTML = `<main>
 
 describe('Update html and store data for new tasks', () => {
   test('Add items to html dom and update tasks array', () => {
-    updateTasks('Clean my workspace')
+    updateTasks('Clean my workspace');
     expect(tasks).toEqual([{ description: 'Clean my workspace', completed: false, index: 0 }]);
   });
 });
@@ -31,7 +31,7 @@ describe('Splice respective element from the tasks array', () => {
   const mockElement = '<li class="item" id="0"><input type="checkbox"> <textarea style="display:block">Clean my workspace</textarea> <i class="bi bi-three-dots-vertical grip"></i> <i class="bi bi-trash3 delete hide"></i></li>';
   document.querySelector('ul').innerHTML = mockElement;
   test('Splice task index in array based on its index in parent node', () => {
-    deleteTask(mockElement)
+    deleteTask(mockElement);
     expect(tasks.length).toEqual(0);
   });
 });

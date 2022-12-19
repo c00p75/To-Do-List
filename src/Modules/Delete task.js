@@ -6,5 +6,4 @@ export default (element) => {
   tasks.splice(parrentIndex, 1);
   storeData();
   retrieveData();
-  return tasks;
 };
