@@ -1,16 +1,22 @@
 import _ from 'lodash'; // eslint-disable-line
 import './style.css';
 import { listElement } from './Modules/Add html.js';
-import { retrieveData, clearCompletedTasks, newToDo } from './Modules/Storage.js';
+import { retrieveData, clearCompletedTasks } from './Modules/Storage.js';
 import validation from './Modules/Validation.js';
 import updateTasks from './Modules/Update task.js';
 import deleteTask from './Modules/Delete task.js';
 import checkBox from './Modules/Check box.js';
 import editTasksField from './Modules/Edit task.js';
 import { taskField, displayDelete } from './Modules/Show delete button.js';
+import { showModal, clear } from './Modules/Clear tasks.js';
 
 // DOM load evenet listener
 document.querySelector('DOMContentLoaded', retrieveData());
+
+document.querySelector('form input').addEventListener('focusout', (event) => {
+  event.target.setAttribute('Placeholder', 'Add to your list...');
+  event.target.classList.remove('error');
+});
 
 // Tasks submit event listener
 document.querySelector('form').addEventListener('submit', (event) => {
@@ -59,4 +65,7 @@ listElement.addEventListener('focusin', (event) => {
 document.querySelector('.clear-all').addEventListener('click', () => clearCompletedTasks());
 
 // Create new To-Do list button event listener
-document.querySelector('.rotate').addEventListener('click', () => newToDo());
+document.querySelector('.rotate').addEventListener('click', () => showModal());
+
+// Modal event listener
+document.querySelector('#modal').addEventListener('click', (event) => clear(event.target));

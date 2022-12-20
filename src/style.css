@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  padding: 2% 0;
+  padding: 5% 0;
 }
 
 #list-container {
@@ -40,7 +40,7 @@ body {
 }
 
 #list-items {
-  max-height: 77vh;
+  max-height: 74vh;
   overflow-y: auto;
 }
 
@@ -146,6 +146,69 @@ button {
   text-decoration: line-through;
 }
 
+#modal-bg {
+  position: fixed !important;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
+  mix-blend-mode: multiply;
+}
+
+#modal {
+  position: fixed;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font);
+  width: 80vw;
+  height: 40vh;
+  background-color: aliceblue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+#modal > button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2% 9%;
+  font-size: 1.5em;
+}
+
+#modal div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20%;
+}
+
+#modal div button {
+  width: 100px;
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+
+#modal #yes {
+  background-color: deepskyblue;
+}
+
+#modal #no {
+  background-color: tomato;
+}
+
+.error::placeholder {
+  color: red;
+}
+
 @media only screen and (min-width: 768px) {
   body {
     background-image: url('./Images/pexels-lukas-317356.jpg');
@@ -159,5 +222,16 @@ button {
 
   #list-items {
     max-height: 70vh;
+  }
+
+  #modal {
+    width: 300px;
+    height: 240px;
+  }
+
+  .rotate:hover {
+    transform: rotate(270deg);
+    font-size: 1.3em;
+    transition: 0.5s;
   }
 }
