@@ -1,3 +1,7 @@
+:root {
+  --font: 1.2rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,24 +11,50 @@
 
 body {
   background-color: whitesmoke;
+  background-image: url('./Images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  padding: 2% 0;
 }
 
 #list-container {
   background-color: white;
-  width: 50vw;
-  margin: 5% auto;
+  width: 95vw;
+  margin: auto;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 8px 8px 2px gainsboro;
-  border-radius: 10px;
+  box-shadow: 0 8px 8px 2px rgb(0, 0, 0);
+  opacity: 0.9;
+  font-size: var(--font);
 }
 
 #title {
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: lighter;
+  width: 90%;
 }
 
 #submit i {
-  font-size: 10px;
+  font-size: 1rem;
+}
+
+#list-items {
+  max-height: 77vh;
+  overflow-y: auto;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  background-color: #dcdcdc;
+  padding: 2%;
+  width: 100% !important;
+}
+
+#settings-container {
+  margin: 0 auto;
+  width: 50%;
 }
 
 .item {
@@ -33,18 +63,17 @@ body {
   align-items: center;
   border-bottom: 1px gainsboro solid;
   padding: 2% 20px;
-  height: 40px;
+  height: 3rem;
 }
 
 textarea {
   border: 0;
-  width: 40vw;
-  height: 20px;
+  width: 100%;
+  height: 2rem;
   resize: none;
   margin: 0 5%;
   vertical-align: middle;
   font: inherit;
-  font-size: 0.75em;
   background: none;
 }
 
@@ -54,6 +83,7 @@ textarea:focus {
 
 .rotate {
   transform: rotate(90deg);
+  font-size: 1.2rem;
 }
 
 button {
@@ -66,6 +96,7 @@ button {
   font-style: italic;
   border: 0;
   width: 100%;
+  font-size: var(--font);
 }
 
 #item-input:focus {
@@ -73,12 +104,14 @@ button {
 }
 
 .clear-all {
+  position: relative;
   background-color: rgb(241, 240, 240);
   text-align: center;
   height: 40px;
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  font-size: var(--font);
 }
 
 .clear-all:hover {
@@ -95,7 +128,6 @@ button {
 
 .delete {
   cursor: pointer;
-  font-size: small;
 }
 
 .delete:hover {
@@ -106,6 +138,26 @@ button {
   display: none;
 }
 
+.hide2 {
+  display: none !important;
+}
+
 .checkedTask {
   text-decoration: line-through;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url('./Images/pexels-lukas-317356.jpg');
+  }
+
+  #list-container {
+    width: 60vw;
+    border-radius: 10px;
+    margin: 1em auto;
+  }
+
+  #list-items {
+    max-height: 70vh;
+  }
 }
