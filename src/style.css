@@ -1,5 +1,6 @@
 :root {
   --font: 1.2rem;
+  --form-control-color: green;
 }
 
 * {
@@ -16,6 +17,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  overflow: auto;
   padding: 5% 0;
 }
 
@@ -64,6 +71,41 @@ body {
   border-bottom: 1px gainsboro solid;
   padding: 2% 20px;
   height: 3rem;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  border-radius: 10%;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.95em;
+  height: 0.95em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked {
+  border: 0;
 }
 
 textarea {
@@ -173,7 +215,6 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2em;
 }
 
 #modal > button {
@@ -188,13 +229,15 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 20%;
+  padding-top: 2em;
 }
 
 #modal div button {
-  width: 100px;
+  width: 90px;
   padding: 20px 15px;
   border-radius: 10px;
+  margin: 0 1em;
+  font-size: 0.9em;
 }
 
 #modal #yes {
@@ -214,14 +257,22 @@ button {
     background-image: url('./Images/pexels-lukas-317356.jpg');
   }
 
+  main {
+    padding: 2% 0;
+  }
+
   #list-container {
     width: 60vw;
     border-radius: 10px;
-    margin: 1em auto;
   }
 
   #list-items {
-    max-height: 70vh;
+    max-height: 69vh;
+  }
+
+  #list-items .item input {
+    height: 20px;
+    width: 20px;
   }
 
   #modal {
