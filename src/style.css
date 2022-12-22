@@ -290,6 +290,6 @@ button {
 
 @media only screen and (max-width: 350px) {
   #title {
-    font-size: 8vw;
+    font-size: 90% !important;
   }
 }
