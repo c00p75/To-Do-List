@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Awesome Book] <a name="about-project"></a>
+# 📖 To-Do List <a name="about-project"></a>
 
 > A simple website that uses Javascript ES6 and Webpack to build a "To-do list" create, read, update, and delete (CRUD) application.
 
@@ -72,20 +72,20 @@ In order to run this project you need:
 
 ### Setup
 
-- In order to Clone this repository to your PC please follow the below steps:
- > copy this link [https://github.com/c00p75/To-Do-List.git]
- > Open your (cmd) or (git bash) and type [cd desktop] to change the directore and selec the desktop
- > go to your (cmd) or (git bash) and type this commad [git clone <copy the repo link>] the repo will be save to your desktop.
+ In order to Clone this repository to your PC please follow the below steps:
+ > Copy this link [https://github.com/c00p75/To-Do-List.git].
+ > Open your (cmd) or (git bash) and select your preffered directory, i.e. `cd desktop` to select the desktop as your working directory.
+ > Type the commad `git clone <paste the repo link>` and the repo will be saved to your current working directory.
 
 ### Usage
 
 To run the project, execute the following command:
 
-> Go to that downloaded folder and open the index.html file and your good to go.
+> In your (cmd) or (git bash), set the current working directory to the downloaded folder. Next, run the command 'npm i' followed by `npm start` and the page will open in the browser.
 
 ### Run tests
 
-There is no testing available until now.
+In your (cmd) or (git bash), with the downloaded folder set as the current working directory, run the command `npm test`.
 
 ### Deployment
 
@@ -97,7 +97,7 @@ You can deploy this project using:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors">Haider Ahamd & George M'sapenda</a>
+## 👥 Authors <a name="authors"> George M'sapenda</a>
 
 > Mention all of the collaborators of this project.
 👤 **Author1**

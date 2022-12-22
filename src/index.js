@@ -1,7 +1,7 @@
 import _ from 'lodash'; // eslint-disable-line
 import './style.css';
 import { listElement } from './Modules/Add html.js';
-import { retrieveData, clearCompletedTasks } from './Modules/Storage.js';
+import { retrieveData, clearCompletedTasks, updateTaskArray } from './Modules/Storage.js';
 import validation from './Modules/Validation.js';
 import updateTasks from './Modules/Update task.js';
 import deleteTask from './Modules/Delete task.js';
@@ -9,6 +9,7 @@ import checkBox from './Modules/Check box.js';
 import editTasksField from './Modules/Edit task.js';
 import { taskField, displayDelete } from './Modules/Show delete button.js';
 import { showModal, clear } from './Modules/Clear tasks.js';
+import dragNdrop from './Modules/Drag-n-drop.js';
 
 // DOM load evenet listener
 document.querySelector('DOMContentLoaded', retrieveData());
@@ -69,3 +70,12 @@ document.querySelector('.rotate').addEventListener('click', () => showModal());
 
 // Modal event listener
 document.querySelector('#modal').addEventListener('click', (event) => clear(event.target));
+
+// Call drag and drop function
+dragNdrop();
+
+// Add drag end event listener
+document.querySelector('#list-items').addEventListener('dragend', () => { updateTaskArray(); });
+
+// Add touch end event listener for touch screens
+document.querySelector('#list-items').addEventListener('touchend', () => { setTimeout(() => updateTaskArray(), 100); });
