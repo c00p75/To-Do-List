@@ -8,7 +8,6 @@ export let tasks = []; // eslint-disable-line
 export const retrieveData = () => {
   const stored = localStorage.getItem('To-do tasks');
   if (stored !== null) { tasks = JSON.parse(stored); }
-  // tasks.sort((a, b) => a.index - b.index);
   document.querySelector('#list-items').innerHTML = '';
   tasks.forEach((item) => addTasks(item.description, item.completed, item.index));
   document.querySelector('#list-items').childNodes.forEach((item) => taskStatus(item.childNodes[0]));
@@ -32,4 +31,18 @@ export const newToDo = () => {
   listElement.innerHTML = '';
   tasks = [];
   storeData();
+};
+
+// Update task array
+export const updateTaskArray = () => {
+  tasks = [];
+  const li = Array.from(document.querySelector('#list-items').children);
+  li.forEach((item) => {
+    const description = item.querySelector('textarea').innerHTML;
+    const completed = item.querySelector('input').checked;
+    const index = li.indexOf(item);
+    tasks.push({ description, completed, index });
+  });
+  storeData();
+  retrieveData();
 };
