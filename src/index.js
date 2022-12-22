@@ -78,4 +78,8 @@ dragNdrop();
 document.querySelector('#list-items').addEventListener('dragend', () => { updateTaskArray(); });
 
 // Add touch end event listener for touch screens
-document.querySelector('#list-items').addEventListener('touchend', () => { setTimeout(() => updateTaskArray(), 100); });
+document.querySelector('#list-items').addEventListener('touchend', (event) => {
+  if (event.target.nodeName === 'I') {
+    setTimeout(() => updateTaskArray(), 100);
+  }
+});
